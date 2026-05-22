@@ -9,16 +9,6 @@ MODEL = "meta-llama/llama-3.1-8b-instruct"
 
 
 def call_llm(messages):
-    """
-    Fix applied:
-    - API_KEY is now resolved inside the function on every call instead of
-      once at module import time. The old top-level assignment meant that if
-      this module was imported before load_dotenv() ran (or before the
-      environment was fully configured), the key would be silently None for
-      the entire session with no visible error until the first API call.
-    - An explicit check raises a clear EnvironmentError immediately if the
-      key is missing, rather than letting the request fail with a cryptic 401.
-    """
     api_key = os.getenv("BERGET_API_KEY")
     if not api_key:
         raise EnvironmentError(

@@ -46,16 +46,9 @@ class Agent:
         relevant_memory = self.memory.search(user_message)
 
         # 2. DETECT SEVERE DISTRESS / CRISIS INTENT
-        # Fix: word-boundary regex replaces the naive substring check that
-        # falsely triggered on words like "diet", "diehard", or historical uses
-        # of "died".
         is_crisis = bool(_CRISIS_PATTERN.search(user_message))
 
         # 3. Context Retrieval Track
-        # Fix: The "-term" blacklist syntax (e.g. "-yoga") is a Google DSL
-        # feature that Tavily silently ignores, so it was polluting every query
-        # string with literal garbage text. Blocklist filtering is now handled
-        # inside web_search.py at the result level, where it actually works.
         if is_crisis:
             safe_crisis_queries = [
                 "stoic philosophy quotes on enduring hardship and finding hope",
