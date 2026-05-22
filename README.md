@@ -2,6 +2,8 @@
 
 A Streamlit and terminal-based chat agent that combines long-term vector memory, web search routing, and an external LLM to generate historically grounded philosophical responses.
 
+Link to video: https://youtu.be/O0TI7zQiYag
+
 ## Overview
 
 This project is built around a retrieval-augmented chat loop:
