@@ -36,6 +36,7 @@ app/
   toolbox.py          # Thin tool dispatcher
   ui_main.py          # Streamlit UI
   main.py             # Terminal chat loop
+  reset_memory.py     # Reset the memory
   requirements.txt    # Runtime dependencies
   .env.example        # Template for local API key configuration
   .gitignore          # Ignores secrets and generated artifacts
@@ -64,10 +65,9 @@ Python packages listed in `app/requirements.txt`:
 
 ## Setup
 
-From the project root, go into the `app` directory and create a virtual environment:
+Create a virtual environment:
 
 ```powershell
-cd "D:\Kuliah\Semester 2\Information Retrieval\agent\app"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
@@ -95,14 +95,12 @@ BERGET_API_KEY=your_api_key_here
 ### Streamlit UI
 
 ```powershell
-cd "D:\Kuliah\Semester 2\Information Retrieval\agent\app"
 streamlit run ui_main.py
 ```
 
 ### Terminal Demo
 
 ```powershell
-cd "D:\Kuliah\Semester 2\Information Retrieval\agent\app"
 python main.py
 ```
 
