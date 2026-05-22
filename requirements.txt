@@ -1,0 +1,7 @@
+# Runtime dependencies for the Philosopher AI Agent
+streamlit
+chromadb
+sentence-transformers
+requests
+python-dotenv
+ddgs
